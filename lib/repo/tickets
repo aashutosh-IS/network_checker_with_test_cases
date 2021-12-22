@@ -1,0 +1,47 @@
+
+1) Implemented basic connection checker for bloc as well as a connection Service(Have created a new class but we can use singleton of MIS)
+  - Bloc can be implemented in ui 
+  - service can be implemented before fetching the data from internet to check internet connectivity.
+
+2) For custom widget, ui, in my opinion we need to create custom wiget for each components like, custom buttons, custom card, any ui that are resuable.
+
+3) For CI/CD the most used is codemagic which includes automated testing, building the flutter app,deployement to the respective market i.e. appstore/play store,
+also have implemented a custom script which builds the apk/ipa and distribute them across the firebase app distribution.
+There also also some others platfrom for ci/cd like fastlane,bitrise and others.
+
+4) A basic acl whill be accoiding to the response, i.e if perticular user is only permitted to view the app, we will disable all the click events for that user, But in the app's ui we will have that buttons, we'll just show and hide according to the role/subscription of the user.
+
+5) Have a decent understanding of clean code, me personally would suggest to put the bloc according to their respective ui, instead keeping all in on place.
+i.e login/ 
+    - login_screen.dart
+    - login_bloc/
+        -bloc
+        -state
+        -event
+Over all folder architechure:
+    - app/
+    - data/
+      - local/
+      - remote/
+    - domain/
+      - model/
+      - repo/
+      - usecase/
+    - presentation/
+      - screen/
+      - commons/ 
+      - resources/
+      - base/
+    - main.dart
+
+
+6) Some of the basic pro's of di:-
+    - Reduces the boilerplate code
+    - Makes our code reusable and clean
+    - Makes it easy to replace our dependencies with fake implementations which make testing easier
+    - Helps us enable loose coupling
+
+Some dis-advantages are :-
+    - It makes testing more complicated if you can't provide the dependencies directly in your test code.
+    - It might get difficult to learn it in details
+    - Hard to understand code flow if there's no prior knowledge of DI.
